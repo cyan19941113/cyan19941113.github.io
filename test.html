@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+
+<script src="js/test.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+           $('li img').on('click',function(){
+                var src = $(this).attr('src');
+                var img = '<img src="' + src + '" class="img-responsive"/>';
+                $('#myModal').modal();
+                $('#myModal').on('shown.bs.modal', function(){
+                    $('#myModal .modal-body').html(img);
+                });
+                $('#myModal').on('hidden.bs.modal', function(){
+                    $('#myModal .modal-body').html('');
+                });
+           });  
+        })
+
+</script>
+
+<style>
+ul {         
+          padding:0 0 0 0;
+          margin:0 0 0 0;
+      }
+      ul li {     
+          list-style:none;
+          margin-bottom:25px;           
+      }
+      ul li img {
+          cursor: pointer;
+      }
+
+</style>
+
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div class="container">
+   <ul class="row">
+   
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">         
+          <div class="modal-body"> 
+          
+         <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><img src="img/550759_10151086016087335_172267252_n.jpg"/></li>
+                         
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+   
+          
+     </ul>
+
+</div>
+
+</body>
+</html>
